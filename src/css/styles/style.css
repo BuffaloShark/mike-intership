@@ -16687,6 +16687,66 @@ img {
   }
 }
 
+.skeleton {
+  background-color: #ddd;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-img-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+}
+
+.skeleton-text {
+  width: 40%;
+  height: 36px;
+  margin: 8px 0;
+  border-radius: 50px;
+  border: none;
+}
+
+.title {
+  height: 24px;
+  width: 60%;
+}
+
+.price {
+  height: 16px;
+  width: 30%;
+}
+
+.likes {
+  height: 16px;
+  width: 20%;
+}
+
+.price-likes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ddd;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+
 .nft-image {
   height: 100%;
   width: 100%;
