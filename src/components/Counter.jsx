@@ -23,7 +23,9 @@ const Counter = ({ expiryDate }) => {
     return () => clearInterval(interval);
   }, [expiryDate]);
 
-  return <div className="de_countdown">{timeLeft}</div>;
+  return timeLeft === "Expired" ? null : (
+  <div className="de_countdown">{timeLeft}</div>
+  );
 };
 
 export default Counter;

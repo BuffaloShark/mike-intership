@@ -4,28 +4,8 @@ import axios from "axios";
 import ReactOwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Counter from "../Counter";
 
-const Countdown = ({ expiryDate }) => {
-  const [timeLeft, setTimeLeft] = useState("");
-  useEffect(() => {
-    const formatTime = (ms) => {
-      const totalSeconds = Math.floor(ms / 1000);
-      const hours = Math.floor(totalSeconds / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-      return `${hours}h ${minutes}m ${seconds}s`;
-    };
-    const update = () => {
-      const now = Date.now();
-      const remaining = Math.max(0, new Date(expiryDate).getTime() - now);
-      setTimeLeft(remaining > 0 ? formatTime(remaining) : "Expired");
-    };
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
-  }, [expiryDate]);
-  return <div className="de_countdown">{timeLeft}</div>;
-};
 const NewItems = () => {
   const [newItems, setNewItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -125,7 +105,7 @@ const NewItems = () => {
                         <i className="fa fa-check"></i>
                       </Link>
                     </div>
-                      <Countdown expiryDate={item.expiryDate} />
+                      <Counter expiryDate={item.expiryDate} />
                     <div className="nft__item_wrap">
                       <div className="nft__item_extra">
                         <div className="nft__item_buttons">
