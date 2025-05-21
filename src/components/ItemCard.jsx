@@ -19,7 +19,7 @@ const ItemCard = ({ item }) => {
         <Counter expiryDate={item.expiryDate} />
 
         <div className="nft__item_wrap">
-          <Link to="/item-details">
+          <Link to={`/item-details/${item.nftId}`}>
             <img
               src={item.nftImage}
               className="lazy nft__item_preview"
