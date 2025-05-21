@@ -8,6 +8,8 @@ import TopSellers from "../components/home/TopSellers";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
+//* Mike wrap up 5.21.25
+
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
